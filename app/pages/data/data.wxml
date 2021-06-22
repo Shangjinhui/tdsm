@@ -1,0 +1,22 @@
+<!--pages/data/data.wxml-->
+<view class="data">
+  <view class="f-cb warp">
+    <view class="search">
+      <image src="{{imgUrl+'img1.png'}}" class="icon fl" bindtap="search"></image>
+      <input placeholder="输入您感兴趣的关键词试试" confirm-type="search"  bindconfirm="search" bindinput="bindinput" value="{{title}}" data-cur='title'  class="text" placeholder-style='color:#CACACA;' class="text" />
+    </view>
+    <view class="list">
+      <view class="li f-cb" wx:for="{{list}}" wx:key="index" data-url="{{item.photo}}" bindtap="down_File">
+        <image src="{{item.img}}" class="icon fl"></image> 
+        <view class="fl box">
+          <view class="title">{{item.title}}</view>
+          <view class="fa">{{item.date}}</view>
+        </view>
+      </view>
+      <view class="tip-box" wx:if="{{!list.length}}">
+        <image src="{{imgUrl+'img23.png'}}"></image>
+        <view class="fa">暂无数据!</view>
+      </view>
+    </view>
+  </view>
+</view>

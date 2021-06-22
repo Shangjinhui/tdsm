@@ -1,0 +1,112 @@
+<view class="contain">
+  <view class="warp">
+    <view class="mian por">
+      <!-- <view class="switch"><text wx:if="{{state}}" bindtap="dataSwitch" data-id="1">收起</text><text wx:else  data-id="2" bindtap="dataSwitch">展开</text></view> -->
+      
+      <view class="box">
+        <view class="title">公司名称</view>
+        <picker bindchange="chooseCompany" value="{{companyInd}}" range="{{company}}"  class="fa por">
+          <view class="picker">{{company[companyInd]}}</view>
+          <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+        </picker>
+      </view>
+      
+      <view class="box">
+        <view class="tip" wx:if="{{companyInd==0}}">请先选择公司名称</view>
+        <view class="por">
+          <view class="switch"><text wx:if="{{state}}" bindtap="dataSwitch" data-id="1">收起</text><text wx:else  data-id="2" bindtap="dataSwitch">展开</text></view>
+          <view class="title">测试项目</view>
+          <picker bindchange="item_BindPickerChange" disabled="{{companyInd==0?true:false}}" value="{{arrid}}" range="{{array}}"  class="fa por">
+            <view class="picker">{{array[arrid]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+        </view>
+        
+        <view class="max-box" wx:if="{{state}}">
+          <view class="tit">测试环境</view>
+          <view class="table f-cb">
+            <view class="td fl">
+              <view class="detaile">温度</view>
+              <view class="number">{{info.temperature}}℃</view>
+            </view>
+            <view class="td fl">
+              <view class="detaile">湿度（RH）</view>
+              <view class="number">{{info.humidity}}%</view>
+            </view>
+          </view>
+          <view class="tit">物理参数</view>
+          <view class="table f-cb">
+            <view class="td fl">
+              <view class="detaile">基带厚度  (μm)</view>
+              <view class="number">{{info.basebandThickness}}</view>
+            </view>
+            <view class="td fl">
+              <view class="detaile">涂布量（g/㎡）</view>
+              <view class="number">{{info.coatingWeight}}</view>
+            </view>
+            <view class="td fl">
+              <view class="detaile">透射密度（OD值）</view>
+              <view class="number">{{info.od}}</view>
+            </view>
+            <view class="td fl">
+              <view class="detaile">碳带总厚度（μm）</view>
+              <view class="number">{{info.carbonBelt}}</view>
+            </view>
+            <view class="td fl">
+              <view class="detaile">表面电阻</view>
+              <view class="number">{{info.surfaceResistance1}}<text>{{info.surfaceResistance2}}</text></view>
+            </view>
+          </view>
+          <view class="tit">掉粉指数</view>
+          <view class="table f-cb">
+            <view class="td fl">
+              <view class="detaile">常温</view>
+              <view class="number">{{info.normalAT}}</view>
+            </view>
+            <view class="td fl">
+              <view class="detaile">-5℃*24h</view>
+              <view class="number">{{info.ch}}</view>
+            </view>
+          </view>
+        </view> 
+      </view>
+      <view class="box">
+        <view class="title">打印速度</view>
+        <view class="mbox f-cb">
+          <picker bindchange="speed_BindPickerChange" value="{{speed}}" range="{{speed_Array}}"  class="fa por fl">
+            <view class="picker">{{speed_Array[speed]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+          <picker bindchange="child_Speed_BindPickerChange" value="{{child_Speed}}" range="{{child_Speed_Array}}"  class="fa por fr">
+            <view class="picker">{{child_Speed_Array[child_Speed]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+        </view>
+      </view>
+      <view class="box">
+        <view class="title">纸张类型</view>
+        <picker bindchange="paper_BindPickerChange" value="{{paper}}" range="{{paper_Array}}"  class="fa por">
+          <view class="picker">{{paper_Array[paper]}}</view>
+          <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+        </picker>
+      </view>
+      <view class="submit" bindtap="search">点击查询</view>
+    </view>
+    <view class="result" wx:if="{{res.length}}">
+      <view class="title">数据结果</view>
+      <view class="box f-cb">
+        <view class="mbox fl {{item.resInfo.length>5?'w100':''}}" wx:for="{{res}}" wx:key="index">
+          <image src="{{item.src}}" class="pic fl"></image>
+          <view class="detaile fl">
+            <view class="tit">{{item.title}}</view>
+            <view class="fa" wx:if="{{index!=5}}">{{item.resInfo}}</view>
+            <view class="circle f-cb" wx:else>{{item.resInfo}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view  class="compare" bindtap="comparison">
+      <image src="{{imgUrl+'img28.png'}}"></image>
+    </view>
+  </view>
+</view>

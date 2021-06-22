@@ -1,0 +1,49 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/resistance/resistance",
+    "pages/data/data",
+    "pages/center/center",
+    "pages/login/login",
+    "pages/compare/compare",
+    "pages/add_contrast/add_contrast"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "杭州天地数码科技股份有限公司",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#8B8686",
+    "selectedColor": "#173B8C",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "介质适应性",
+        "iconPath": "/resources/img1.png",
+        "selectedIconPath": "/resources/img2.png"
+      },
+      {
+        "pagePath": "pages/resistance/resistance",
+        "text": "介质抗性",
+        "iconPath": "/resources/img3.png",
+        "selectedIconPath": "/resources/img4.png"
+      },
+      {
+        "pagePath": "pages/data/data",
+        "text": "资料区",
+        "iconPath": "/resources/img5.png",
+        "selectedIconPath": "/resources/img6.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "我的",
+        "iconPath": "/resources/img7.png",
+        "selectedIconPath": "/resources/img8.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,64 @@
+<view class="contain">
+  <view class="warp">
+    <view class="mian por">
+
+      <view class="box">
+        <view class="title">公司名称</view>
+        <picker bindchange="chooseCompany" value="{{companyInd}}" range="{{company}}"  class="fa por">
+          <view class="picker">{{company[companyInd]}}</view>
+          <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+        </picker>
+      </view>
+
+      <view class="box">
+        <view class="tip" wx:if="{{companyInd==0}}">请先选择公司名称</view>
+        <view class="por">
+          <view class="title">测试项目</view>
+          <picker bindchange="item_BindPickerChange" disabled="{{companyInd==0?true:false}}" value="{{arrid}}" range="{{array}}"  class="fa por">
+            <view class="picker">{{array[arrid]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+        </view>
+      </view>
+      <!-- 介质适应性添加对比 -->
+      <view class="box" wx:if="{{yesId==1}}">
+        <view class="title">打印速度</view>
+        <view class="mbox f-cb">
+          <picker bindchange="speed_BindPickerChange" value="{{speed}}" range="{{speed_Array}}"  class="fa por fl">
+            <view class="picker">{{speed_Array[speed]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+          <picker bindchange="child_Speed_BindPickerChange" value="{{child_Speed}}" range="{{child_Speed_Array}}"  class="fa por fr">
+            <view class="picker">{{child_Speed_Array[child_Speed]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+        </view>
+      </view>
+
+      <!-- 介质抗性添加对比 -->
+      <view class="box" wx:if="{{yesId==2}}">
+        <view class="title">介质抗性</view>
+        <view class="mbox f-cb">
+          <picker bindchange="speed_BindPickerChange" value="{{speed}}" range="{{speed_Array}}"  class="fa por fl">
+            <view class="picker">{{speed_Array[speed]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+          <picker bindchange="child_Speed_BindPickerChange" value="{{child_Speed}}" range="{{child_Speed_Array}}"  class="fa por fr">
+            <view class="picker">{{child_Speed_Array[child_Speed]}}</view>
+            <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+          </picker>
+        </view>
+      </view>
+
+      <view class="box">
+        <view class="title">纸张类型</view>
+        <picker bindchange="paper_BindPickerChange" value="{{paper}}" range="{{paper_Array}}"  class="fa por">
+          <view class="picker">{{paper_Array[paper]}}</view>
+          <image src="{{imgUrl+'img2.png'}}" class="icon"></image>
+        </picker>
+      </view>
+      <view class="submit" bindtap="submit">添加对比</view>
+      <navigator url="/pages/compare/compare" class="tip-fa">取消</navigator>
+    </view>
+  </view>
+</view>

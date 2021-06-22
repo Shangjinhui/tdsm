@@ -1,0 +1,20 @@
+<view class="rel header {{navData.colos?'on':''}}" style='height:{{navHeight}}px;'>
+  <!-- 主导航 -->
+  <view class='headBox headBox1 f-cb' style='top:{{navTop}}px;left:{{navLeft}}px;height:{{navDivHeight}}px' wx:if="{{navData.num==1}}">
+    <image src="{{imgUrl+'img5.png'}}" class='arr'  bindtap='NavBackHome' style='top: {{height + 12}}px;'></image>
+  </view>
+  <!-- 内页 黑色返回箭头 黑色返回首页 -->
+  <view class='headBox f-cb' style='top:{{navTop}}px;left:{{navLeft}}px' wx:if="{{navData.num==2}}">
+    <image src="{{imgUrl+'img1.png'}}" class='arr'  bindtap='NavBack' style='top: {{height + 12}}px;'></image>
+    <image src="{{imgUrl+'img5.png'}}" class='arr'  bindtap='NavBackHome' style='top: {{height + 12}}px;'></image>
+  </view>
+  <!-- 内页 白色返回箭头 白色返回首页 -->
+  <view class='headBox f-cb' style='top:{{navTop}}px;left:{{navLeft}}px' wx:if="{{navData.num==3}}">
+    <image src="{{imgUrl+'img3.png'}}" class='arr'  bindtap='NavBack' style='top: {{height + 12}}px;'></image>
+    <image src="{{imgUrl+'img6.png'}}" class='arr'  bindtap='NavBackHome' style='top: {{height + 12}}px;'></image>
+  </view>
+  <view class='navtitle' style="height:{{navDivHeight}}px;line-height:{{navDivHeight}}px;top:{{navTop}}px;" wx:if="{{!navData.tab}}">{{navData.title}}</view>
+   <view class='navtitle' style="height:{{navDivHeight}}px;line-height:{{navDivHeight}}px;top:{{navTop}}px;" wx:if="{{navData.tab}}">
+   
+   </view>
+</view>

@@ -1,0 +1,21 @@
+<view class="nave {{isIphoneX?'on':''}}">
+    <view  class="nave-item " wx:if="{{ind==0}}">
+        <view class=" nave-ico1" style="background-image: url({{storyInfo.logo.url}})"/>
+    </view>
+    <navigator url="/pages/store/store?company={{storyInfo.id}}" open-type='reLaunch' class="nave-item " wx:if="{{ind!=0}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+'store_ico1.png'}})"/>
+        首页
+    </navigator>
+    <navigator url="/pages/storeList/storeList?company={{storyInfo.id}}" open-type='reLaunch' class="nave-item {{ind==1?'on':''}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==1?'store_ico21.png':'store_ico2.png')}})" />
+        全部宝贝
+    </navigator>
+     <navigator url="/pages/storeClass/storeClass?company={{storyInfo.id}}" open-type='reLaunch' class="nave-item {{ind==2?'on':''}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==2?'store_ico31.png':'store_ico3.png')}})" />
+        宝贝分类
+    </navigator>
+      <button open-type="contact" session-from="nickName={{info.nickname}}|avatarUrl={{info.avatar}}|foreignid={{info.id}}|ysf.config={{ysf.config}}|groupid={{storyInfo.customerServiceId?storyInfo.customerServiceId:'398415660'}}" class="nave-item" style="width:187rpx;font-weight:500;background:none;padding:0;">
+        <view class="nave-ico" style="background-image: url({{imgUrl+'store_ico4.png'}})" />
+        联系客服
+    </button>
+</view>

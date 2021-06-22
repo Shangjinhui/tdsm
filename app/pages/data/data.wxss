@@ -1,0 +1,77 @@
+/* pages/data/data.wxss */
+.data{
+  min-height: 100vh;
+  background-color: #EFF3F4;
+}
+.data .warp{
+  padding-top: 30rpx;
+}
+.data .warp .search{
+  display: block;
+  width: 686rpx;
+  padding: 16rpx 28rpx;
+  background-color: #fff;
+  border-radius: 38rpx;
+  margin:0 auto 26rpx;
+  box-sizing: border-box;
+}
+.data .warp .search .icon{
+  display: block;
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: 23rpx;
+}
+.data .warp .search  .text{
+  display: block;
+  width: 473rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #A0A0A0;
+}
+.list{
+  border-top-left-radius: 55rpx;
+  border-top-right-radius: 55rpx;
+  background-color: #fff;
+  padding: 33rpx 44rpx 0;
+  min-height: calc(100vh - 132rpx);
+}
+.list .li{
+  margin-bottom: 40rpx;
+}
+.list .li .icon{
+  width: 60rpx;
+  height: 60rpx;
+}
+.list .li .box{
+  width: calc(100% - 90rpx);
+  margin-left: 30rpx;
+}
+.list .li .box .title{
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #2E2F33;
+  line-height: 40rpx;
+  margin-bottom: 2rpx;
+}
+.list .li .box .fa{
+  font-size: 24rpx;
+  font-weight: 400;
+  color: #A1A6B2;
+  line-height: 33rpx;
+}
+.tip-box{
+  text-align: center;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #6D717A;
+  line-height: 37rpx;
+  padding-top: 50rpx;
+}
+.tip-box image{
+  display: block;
+  width: 203rpx;
+  height: 203rpx;
+  margin:0 auto 60rpx;
+}

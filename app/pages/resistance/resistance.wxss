@@ -1,0 +1,185 @@
+/**index.wxss**/
+.contain{
+  background-color: #EFF3F4;
+  min-height: 100vh;
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+.contain .warp{
+  padding: 28rpx 32rpx 37rpx;
+}
+.contain .warp .mian{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 32rpx 32rpx 50rpx;
+}
+.contain .mian .switch{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #C7592C;
+  line-height: 37rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 0rpx;
+}
+.warp .mian .box{
+  margin-bottom: 30rpx;
+}
+.warp .mian .box .tip{
+  font-size: 22rpx;
+  color: #ff261a;
+  margin-bottom: 8rpx;
+}
+.warp .mian .box .title{
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2E2F33;
+  line-height: 42rpx;
+  margin-bottom: 13rpx;
+}
+.warp .mian .box .fa{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #A1A6B2;
+  line-height: 37rpx;
+  border-bottom: 1px solid rgba(241, 241, 242, 0.5);
+  padding-bottom: 21rpx;
+}
+.warp .mian .box .mbox .fa{
+  width: 46%;
+}
+.warp .mian .box .fa .icon{
+  display: block;
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 0;
+  top: 6rpx;
+}
+.submit{
+  width: 624rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 50rpx auto 0;
+  background: #173B8C;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.max-box{
+  padding-bottom: 15rpx;
+  border-bottom: 1px solid rgba(241, 241, 242, 0.5);
+}
+.max-box .tit{
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #696F7D;
+  line-height: 37rpx;
+  margin: 22rpx 0 16rpx;
+}
+.max-box .table{
+  background-color: #F3F7FF;
+  border-radius: 10rpx;
+  padding: 26rpx 0rpx 0 50rpx;
+}
+.max-box .table .td{
+  width: 50%;
+  float:left;
+  margin-bottom: 15rpx;
+}
+.max-box .table .td .detaile{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #696F7D;
+  line-height: 37rpx;
+}
+.max-box .table .td .number{
+  font-size: 36rpx;
+  font-weight: 400;
+  color: #2E2F33;
+  line-height: 50rpx;
+}
+.max-box .table .td .number text{
+  position: relative;
+  font-size: 24rpx;
+  top: -12rpx;
+  left: 8rpx;
+}
+.result{
+  background-color: #fff;
+  border-radius: 10rpx;
+  margin-top: 30rpx;
+  padding: 33rpx 32rpx 0;
+}
+.result .title{
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2E2F33;
+  line-height: 42rpx;
+  margin-bottom: 40rpx;
+}
+.result .mbox{
+  width: 50%;
+  margin-bottom: 40rpx;
+}
+.result .mbox.w100{
+  width: 100%;
+}
+.result .mbox .pic{
+  width: 102rpx;
+  height: 102rpx;
+}
+/* .result .mbox .pic image{
+  display:block;
+  width: 30rpx;
+  height: 30rpx;
+  position: relative;
+  top: calc(50% - 15rpx);
+  left: calc(50% - 15rpx);
+} */
+.result .mbox .detaile{
+  width: calc(100% - 123rpx);
+  margin-left:17rpx; 
+}
+.result .mbox .detaile .tit{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #696F7D;
+  line-height: 37rpx;
+  padding-top: 5rpx;
+}
+.result .mbox .detaile .fa{
+  font-size: 36rpx;
+  font-weight: 400;
+  color: #2E2F33;
+  line-height: 50rpx;
+}
+.result .mbox .detaile .circle text{
+  display: block;
+  width: 31rpx;
+  height: 31rpx;
+  border: 1rpx solid #979797;
+  box-sizing: border-box;
+  float: left;
+  border-radius: 50%;
+  margin:12rpx 12rpx 0 0;
+}
+.result .mbox .detaile .circle text.on{
+  background-color: #000;
+}
+.compare{
+  width: 126rpx;
+  height: 126rpx;
+  position: fixed;
+  bottom: 37rpx;
+  right: 32rpx;
+  z-index: 15;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.compare image{
+  display: block;
+  width: 126rpx;
+  height: 126rpx;
+}

@@ -1,0 +1,19 @@
+<!--pages/center/center.wxml-->
+<view class="center">
+  <view class="bg"></view>
+  <view class="warp">
+    <view class="mian">
+      <image src="{{avatar}}" class="avatar" bindtap="changeAvatar"></image>
+      <view class="title">{{info.nickname}}</view>
+      <view class="box f-cb">
+        <image src="{{imgUrl+'img13.png'}}" class="icon fl"></image>
+        <view class="fa fl">岗位：{{info.praTitles}}</view>
+      </view>
+      <view class="box f-cb">
+        <image src="{{imgUrl+'img12.png'}}" class="icon fl"></image>
+        <view class="fa fl">手机：{{info.phone}}</view>
+      </view>
+      <view bindtap="drop_Out" class="btn">退出登录</view>
+    </view>
+  </view>
+</view>

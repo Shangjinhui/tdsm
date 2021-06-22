@@ -1,0 +1,23 @@
+<view class="nave {{isIphoneX?'on':''}}">
+    <navigator url="/pages/index/index" open-type='reLaunch' class="nave-item {{ind==0?'on':''}}" >
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==0?'footer_11.png':'footer_1.png')}})"/>
+        首页
+    </navigator>
+    <navigator url="/pages/class/class" open-type='reLaunch' class="nave-item {{ind==1?'on':''}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==1?'footer_21.png':'footer_2.png')}})" />
+        分类
+    </navigator>
+    <navigator url="/pages/messageCenter/messageCenter" open-type='reLaunch' class="nave-item  {{ind==2?'on':''}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==2?'footer_31.png':'footer_3.png')}})" />
+        消息
+        <text class=" " wx:if="{{info.total>0}}">{{info.total}}</text>
+    </navigator>
+     <navigator url="/pages/shoppingCar/shoppingCar" open-type='reLaunch' class="nave-item {{ind==3?'on':''}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==3?'footer_41.png':'footer_4.png')}})" />
+        购物车
+    </navigator>
+      <navigator url="/pages/personal/personal" open-type='reLaunch' class="nave-item {{ind==4?'on':''}}">
+        <view class="nave-ico" style="background-image: url({{imgUrl+(ind==4?'footer_51.png':'footer_5.png')}})" />
+        我的
+    </navigator>
+</view>

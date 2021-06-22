@@ -1,0 +1,41 @@
+/**app.wxss**/
+.body{
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+.clear{
+  clear: both;
+}
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
+.f-cb {
+	zoom: 1;
+}
+.f-cb:after {
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
+	content: ".";
+}
+.por{
+  position: relative;
+}
+.text-center{
+	display: flex;
+	align-items: center; /*定义body的元素垂直居中*/
+	/* justify-content: center; */
+}
+.translate-centerY{
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform:translateY(-50%);
+	transform:translateY(-50%);
+}

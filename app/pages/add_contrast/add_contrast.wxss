@@ -1,0 +1,77 @@
+/**index.wxss**/
+.contain{
+  background-color: #EFF3F4;
+  min-height: 100vh;
+  font-family: PingFangSC-Medium, PingFang SC;
+}
+.contain .warp{
+  padding: 28rpx 32rpx 37rpx;
+}
+.contain .warp .mian{
+  background-color: #fff;
+  border-radius: 10rpx;
+  padding: 32rpx 32rpx 50rpx;
+}
+.contain .mian .switch{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #C7592C;
+  line-height: 37rpx;
+  position: absolute;
+  right: 32rpx;
+  top: 0rpx;
+}
+.warp .mian .box{
+  margin-bottom: 30rpx;
+}
+.warp .mian .box .tip{
+  font-size: 22rpx;
+  color: #ff261a;
+  margin-bottom: 8rpx;
+}
+.warp .mian .box .title{
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #2E2F33;
+  line-height: 42rpx;
+  margin-bottom: 13rpx;
+}
+.warp .mian .box .fa{
+  font-size: 26rpx;
+  font-weight: 400;
+  color: #A1A6B2;
+  line-height: 37rpx;
+  border-bottom: 1px solid rgba(241, 241, 242, 0.5);
+  padding-bottom: 21rpx;
+}
+.warp .mian .box .mbox .fa{
+  width: 46%;
+}
+.warp .mian .box .fa .icon{
+  display: block;
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 0;
+  top: 6rpx;
+}
+.submit{
+  width: 624rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin: 50rpx auto 0;
+  background: #173B8C;
+  border-radius: 8rpx;
+  text-align: center;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+.tip-fa{
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #173B8C;
+  line-height: 40rpx;
+  text-align: center;
+  margin-top: 34rpx;
+}

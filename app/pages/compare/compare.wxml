@@ -1,0 +1,327 @@
+<!--pages/compare/compare.wxml-->
+<view class="compare">
+  <view class="fix-head f-cb">
+    <view class="title text-center fl">
+      <view><view class="fa">共有{{list.length}}个</view><view class="fa">对比项目</view></view>
+    </view>
+    <view class="head fl">
+      <scroll-view scroll-x="true" scroll-left="{{scrollLeft}}" scroll-with-animation="true" bounces="false" enhanced="true" binddragend="scroll_End">
+        <view class="scroll-item por" wx:for="{{list}}" wx:key="index">
+          <image src="{{imgUrl+'img4.png'}}" class="delete" data-index="{{index}}" bindtap="delete_Item"></image>
+          <view class="tit">{{item.title}}</view>
+          <view class="f-cb"><image src="{{imgUrl+'img3.png'}}" class="edit fr" data-index="{{index}}" bindtap="edit_Item"></image></view>
+        </view>
+        <view class="scroll-item on por"  bindtap="add_Compare">
+          <image src="{{imgUrl+'img29.png'}}" class="add" bindtap="add_Compare"></image>
+          <view class="tit"  bindtap="add_Compare">添加对比项</view>
+          <view class="f-cb" style="opacity: 0;"><image src="{{imgUrl+'img3.png'}}" class="edit fr"></image></view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="nav por fl">
+      <view class="tit por" bindtap="navList">测试环境<text></text></view>
+      <view class="list f-cb" wx:if="{{state}}">
+        <view class="fa {{sub==1?'on':''}}" bindtap="navTop" data-id="1" data-top="0">测试环境</view>
+        <view class="fa {{sub==2?'on':''}}" bindtap="navTop" data-id="2" data-top="100">物理参数</view>
+        <view class="fa {{sub==3?'on':''}}" bindtap="navTop" data-id="3" data-top="403">掉粉指数</view>
+        <view class="fa {{sub==4?'on':''}}" bindtap="navTop" data-id="4" data-top="555">打印速度</view>
+        <view class="fa {{sub==5?'on':''}}" bindtap="navTop" data-id="5" data-top="709">纸张类型</view>
+        <view class="fa {{sub==6?'on':''}}" bindtap="navTop" data-id="6" data-top="812">数据结果</view>
+      </view>
+    </view>
+  </view>
+  <view class="warp f-cb">
+    <view class="left-fix fl">
+      <view class="box">温度</view>
+      <view class="box">湿度</view>
+      <view class="title">物理参数</view>
+      <view class="box">基带厚度  (μm)</view>
+      <view class="box">涂布量 (g/㎡)</view>
+      <view class="box">透射密度 (OD值)</view>
+      <view class="box">碳带总厚度 (μm)</view>
+      <view class="box">表面电阻</view>
+      <view class="title">掉粉指数</view>
+      <view class="box">常温</view>
+      <view class="box">-5℃*24h</view>
+      <view class="title">打印速度</view>
+      <view class="box">打印速度</view>
+      <view class="box">打印条件</view>
+      <view class="title">纸张类型</view>
+      <view class="box">纸张类型</view>
+      <view class="title">数据结果</view>
+     
+      <view class="box" wx:for="{{list[0]&&list[0].res_data}}" wx:key="index">{{item.title}}</view>
+      <!-- <view wx:if="{{id==1}}">
+        <view class="box">温度范围</view>
+        <view class="box">窗口</view>
+        <view class="box">密度值</view>
+        <view class="box">可打印最小字号</view>
+        <view class="box">边界是否清晰</view>
+        <view class="box">介质适应性</view>
+      </view>
+      
+      <view wx:if="{{id==2}}">
+        <view class="box">耐刮</view>
+        <view class="box">耐擦</view>
+        <view class="box">耐酒精</view>
+        <view class="box">耐汽油</view>
+        <view class="box">耐制动液</view>
+        <view class="box">印迹有无脱落</view>
+        <view class="box">残留</view>
+      </view> -->
+    </view>
+    <view class="right-fix fl">
+      <scroll-view scroll-x="true" scroll-left="{{scrollLefts}}"  scroll-with-animation="true" bounces="false"  enhanced="true" binddragend="scroll_Ends">
+        <view class="f-cb" style="width:{{277*(length)}}rpx;">
+          <view wx:for="{{list}}" wx:key="index" style="width:277rpx" class="fl">
+            <!-- 测试环境↓ -->
+            <view class="box f-cb por">
+              <view class="hr" ></view>
+              <view class="mbox f-cb">
+                <view class="fa" ><view class="translate-centerY">{{item.temperature}}℃</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr" ></view>
+              <view class="mbox f-cb">
+                <view class="fa" ><view class="translate-centerY">{{item.humidity}}</view></view>
+              </view>
+            </view>
+            <!-- 物理参数↓ -->
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.basebandThickness}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.coatingWeight}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.od}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.carbonBelt}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.surfaceResistance1}}</view></view>
+              </view>
+            </view>
+            <!-- 掉粉↓ -->
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.normalAT}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.ch}}</view></view>
+              </view>
+            </view>
+            <!-- 打印速度↓ -->
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.type1Name}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.type2Name}}</view></view>
+              </view>
+            </view>
+            <!-- 纸张类型↓ -->
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.paperName}}</view></view>
+              </view>
+            </view>
+            <!-- 数据结果↓ -->
+            <view class="kong"></view>
+            <view class="box f-cb por" wx:for="{{item.res_data}}" wx:for-item="item2" wx:for-index="index2" wx:key="index2">
+                <view class="hr"></view>
+                <view class="mbox f-cb">
+                  <view class="fa"><view class="translate-centerY">{{item2.resInfo}}</view></view>
+                </view>
+            </view>
+            <!-- <view class="box f-cb por">
+                <view class="hr"></view>
+                <view class="mbox f-cb">
+                  <view class="fa"><view class="translate-centerY">{{item.res_data[0].resInfo}}</view></view>
+                </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.res_data[1].resInfo}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.res_data[2].resInfo}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.res_data[3].resInfo}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.res_data[4].resInfo}}</view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY">{{item.res_data[5].resInfo}}</view></view>
+              </view>
+            </view> -->
+          </view>
+          <!-- 空列表↓ -->
+          <!-- <view style="width:277rpx" class="fl">
+            <view class="box f-cb por" style="width:277rpx">
+              <view class="hr" ></view>
+              <view class="mbox f-cb">
+                <view class="fa" ><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por" style="width:277rpx">
+              <view class="hr" ></view>
+              <view class="mbox f-cb">
+                <view class="fa" ><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="kong"></view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="kong"></view>
+            <view class="box f-cb por">
+                <view class="hr"></view>
+                <view class="mbox f-cb">
+                  <view class="fa"><view class="translate-centerY"></view></view>
+                </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+            <view class="box f-cb por">
+              <view class="hr"></view>
+              <view class="mbox f-cb">
+                <view class="fa"><view class="translate-centerY"></view></view>
+              </view>
+            </view>
+          </view> -->
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="bg-fix" wx:if="{{state}}"></view>
+  <view class="fix-bottom">
+    <view bindtap="link_Page" class="submit">返回介质适应性</view>
+  </view>
+</view>
